@@ -20,8 +20,12 @@ LinuxTune
 	3. make
 	This command is to compile the main.c file into an executable
 	4. sudo make install
-	The last command is to install the program so you will be able to run the uap program from any directory.
+	This command is to install the program so you will be able to run the uap program from any directory.
+	5. make clean
+	This last command is to remove the autom4te.cache folder. 
 ---INFO---
 	LinuxTune is a lightweight open source audio player made for linux that works both with command line and a GUI together.
 	This version supports mp3, ogg and mp2 files. 
+---USAGE---
+	linuxtune <audiofile.mp3/mp2/ogg>
 	
