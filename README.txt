@@ -1,4 +1,4 @@
-UAP (Universal audio player)
+LinuxTune
 
 ----DEPENDENCIES----
 	automake
@@ -20,6 +20,6 @@ UAP (Universal audio player)
 	4. sudo make install
 	The last command is to install the program so you will be able to run the uap program from any directory.
 ---INFO---
-	UAP (universal audio player) is a lightweight open source audio player
-	made for linux. This version supports mp3, ogg and mp2 files. Future releases of the program will support more audio files.
+	LinuxTune is a lightweight open source audio player made for linux that works both with command line and a GUI together.
+	This version supports mp3, ogg and mp2 files. 
 	
