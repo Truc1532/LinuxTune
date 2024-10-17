@@ -6,6 +6,8 @@ LinuxTune
 	make
 	mpg123 lib
 	SDL2 lib
+	GLEW (opengl) lib
+	GL (opengl) lib
 	vorbis lib
 	vorbisfile lib
 	ogg lib
