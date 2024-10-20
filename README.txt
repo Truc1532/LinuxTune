@@ -1,4 +1,4 @@
-# Linux tune command line edition
+# Linuxtune 
 
 ----DEPENDENCIES----
 	automake
@@ -18,7 +18,7 @@
 	3. make
 	This command is to compile the main.c file into an executable
 	4. sudo make install
-	The last command is to install the program so you will be able to run the uap program from any directory.
+	The last command is to install the program so you will be able to run the program from any directory.
 ---INFO---
 	Linux tune is a command line based, lightweight open source audio player
 	made for linux. This version supports mp3, ogg and mp2 files.
