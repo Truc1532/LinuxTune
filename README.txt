@@ -16,7 +16,7 @@
 	Then to build the program enter:
 	./build.sh
 	And if the build.sh finished with no error enter:
-	./install.sh
+	sudo ./install.sh
 ---INFO---
 	Linux tune is a command line based, lightweight open source audio player
 	made for linux. This version supports mp3, ogg, mp2 and wav files.
