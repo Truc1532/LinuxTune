@@ -13,6 +13,21 @@ void audio_callback(void *userdata, Uint8 *stream, int len) {
         if (err == MPG123_DONE || done == 0) {
             SDL_PauseAudio(1);
         }
+    } else if (audio_data->is_wav) {
+        if (audio_data->wav_position >= audio_data->wav_length) {
+            SDL_PauseAudio(1);
+            return;
+        }
+
+        Uint32 remaining = audio_data->wav_length - audio_data->wav_position;
+        Uint32 len_to_copy = (len > remaining) ? remaining : len;
+
+        SDL_memcpy(stream, audio_data->wav_buffer + audio_data->wav_position, len_to_copy);
+        audio_data->wav_position += len_to_copy;
+
+        if (len > len_to_copy) {
+            SDL_memset(stream + len_to_copy, 0, len - len_to_copy);
+        }
     } else {
         int current_section;
         long bytes_read;
@@ -29,7 +44,7 @@ void audio_callback(void *userdata, Uint8 *stream, int len) {
     }
 }
 
-void print_audio_progress(AudioData *audio_data) {
+void print_audio_progress(AudioData *audio_data, SDL_AudioSpec wav_spec) {
     double current_time = 0.0;
 
     if (audio_data->is_mp3 || audio_data->is_mp2) {
@@ -42,6 +57,8 @@ void print_audio_progress(AudioData *audio_data) {
 
         current_time = (double)current_sample / sample_rate;
         audio_data->total_duration = (double)total_samples / sample_rate;
+    } else if (audio_data->is_wav) {
+        current_time = (double)audio_data->wav_position / (wav_spec.freq * wav_spec.channels * 2);
     } else {
         current_time = ov_time_tell(&audio_data->vorbis_file);
     }
