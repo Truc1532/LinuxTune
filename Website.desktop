@@ -1,0 +1,6 @@
+[Desktop Entry]
+Version=1.0
+Name=Example Website
+Exec=xdg-open https://github.com/Truc1532/
+Icon=web-browser
+Type=Application
